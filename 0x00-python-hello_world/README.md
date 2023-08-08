@@ -31,4 +31,4 @@
 - 101-compile
 - 102-magic_calculation.py
 
-/* Any file not seen means i couldn't do that task and seeing a file does not mean i got all the ALX green checks. Do not copy work, only use as guide */
+*Any file not seen means i couldn't do that task and seeing a file does not mean i got all the ALX green checks. Do not copy work, only use as guide*
