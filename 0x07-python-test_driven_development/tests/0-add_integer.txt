@@ -1,0 +1,49 @@
+>>> add_integer = __import__("0-add_integer").add_integer
+>>> x = __import__("0-add_integer").__doc__
+>>> len(x) > 1
+True
+>>> y = __import__("0-add_integer").add_integer.__doc__
+>>> len(y) > 1
+True
+>>> add_integer(1, 2)
+3
+>>> add_integer(100, -2)
+98
+>>> add_integer(-1, 100)
+99
+>>> add_integer(2)
+100
+>>> add_integer(2.5)
+100
+>>> add_integer(100.3, -2)
+98
+>>> add_integer(-2, 100.3)
+98
+>>> add_integer(1, -2.5)
+-1
+>>> add_integer(-2.5, 1)
+-1
+>>> add_integer(100.3, 100.3)
+200
+>>> add_integer(999999999999999999999999999999, 1)
+1000000000000000000000000000000
+>>> add_integer()
+Traceback (most recent call last):
+  ...
+TypeError: add_integer() missing 1 required positional argument: 'a'
+>>> add_integer(4, "School")
+Traceback (most recent call last):
+  ...
+TypeError: b must be an integer
+>>> add_integer("School", 4)
+Traceback (most recent call last):
+  ...
+TypeError: a must be an integer
+>>> add_integer(1, float('nan'))
+Traceback (most recent call last):
+  ...
+ValueError: cannot convert float NaN to integer
+>>> add_integer(1, 2, 3)
+Traceback (most recent call last):
+  ...
+TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
