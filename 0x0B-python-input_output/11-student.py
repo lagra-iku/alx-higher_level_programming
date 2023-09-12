@@ -47,4 +47,4 @@ class Student:
         for i in json:
             for item in obj:
                 if (item == i):
-                    setattr(self, i, json[i]}
+                    setattr(self, i, json[i])
