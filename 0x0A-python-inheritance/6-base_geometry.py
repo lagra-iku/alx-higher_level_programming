@@ -5,6 +5,12 @@ Geometry Module
 
 
 class BaseGeometry:
+    """
+    an empty class BaseGeometry
+    """
+    def __init__(self):
+        pass
+
     def area(self):
         """
         func that raises an Exception
