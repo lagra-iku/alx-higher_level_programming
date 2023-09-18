@@ -145,3 +145,10 @@ class Rectangle(Base):
                 if (i < self.height - 1):
                     string = string + "\n"
             print(string)
+
+    def __str__(self):
+        """
+        updating the rectangle instance
+        """
+        fmt = (self.id, self.__x, self.__y, self.__width, self.__height)
+        return("[Rectangle] ({}) {}/{} - {}/{}".format(*fmt))
