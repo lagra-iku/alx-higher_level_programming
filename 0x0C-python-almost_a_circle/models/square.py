@@ -9,7 +9,6 @@ class Square(Rectangle):
     """
     A class square
     """
-    elem = 0
 
     def __init__(self, size, x=0, y=0, id=None):
         """ initializes an instance of square"""
@@ -30,3 +29,22 @@ class Square(Rectangle):
         """updating the square instance"""
         fmt = [self.id, self.x, self.y, self.width]
         return ("[Square] ({}) {}/{} - {}".format(*fmt))
+
+    def update(self, *args, **kwargs):
+        """
+        update the class square
+        """
+        fmt = ['id', 'width', 'x', 'y']
+        if args is not None and len(args) != 0:
+            count = 0
+            for i in args:
+                if count < 5:
+                    setattr(self, fmt[count], i)
+                    count += 1
+        else:
+            for key, value in kwargs.items():
+                for i in fmt:
+                    if (i == key):
+                        setattr(self, key, value)
+                if key == 'size':
+                    setattr(self, 'width', value)
