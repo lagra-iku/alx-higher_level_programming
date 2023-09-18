@@ -138,13 +138,13 @@ class Rectangle(Base):
             print("")
             return ""
         else:
-            string = ""
+            print("\n" * self.__y, end="")
             for i in range(self.height):
-                for j in range(self.width):
-                    string = string + "#"
-                if (i < self.height - 1):
-                    string = string + "\n"
-            print(string)
+                for x in range(self.__x):
+                    print(" ", end="")
+                for w in range(self.__width):
+                    print("#", end="")
+                print()
 
     def __str__(self):
         """
