@@ -169,3 +169,13 @@ class Rectangle(Base):
                 for i in fmt:
                     if (i == key):
                         setattr(self, key, value)
+
+    def to_dictionary(self):
+        """creating a dictionary representation"""
+        return {
+            "id": self.id,
+            "width": self.width,
+            "height": self.height,
+            "x": self.x,
+            "y": self.y
+        }
