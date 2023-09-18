@@ -152,3 +152,20 @@ class Rectangle(Base):
         """
         fmt = (self.id, self.__x, self.__y, self.__width, self.__height)
         return("[Rectangle] ({}) {}/{} - {}/{}".format(*fmt))
+
+    def update(self, *args, **kwargs):
+        """
+        update the class rectangle
+        """
+        fmt = ['id', 'width', 'height', 'x', 'y']
+        if args is not None and len(args) != 0:
+            count = 0
+            for i in args:
+                if count < 5:
+                    setattr(self, fmt[count], i)
+                    count += 1
+        else:
+            for key, value in kwargs.items():
+                for i in fmt:
+                    if (i == key):
+                        setattr(self, key, value)
