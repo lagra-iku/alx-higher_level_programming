@@ -126,3 +126,22 @@ class Rectangle(Base):
             area of rectangle
         """
         return self.__width * self.__height
+
+    def display(self):
+        """
+        print the rectangle with the character #
+
+        Returns:
+            rectangle printed with #
+        """
+        if self.__width == 0 or self.__height == 0:
+            print("")
+            return ""
+        else:
+            string = ""
+            for i in range(self.height):
+                for j in range(self.width):
+                    string = string + "#"
+                if (i < self.height - 1):
+                    string = string + "\n"
+            print(string)
