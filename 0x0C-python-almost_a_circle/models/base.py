@@ -39,5 +39,6 @@ class Base:
             if list_objs is None:
                 file.write("[]")
             else:
-                json_data = cls.to_json_string(list_objs)
+                json_serialize = [i.to_dictionary() for i in list_objs]
+                json_data = cls.to_json_string(json_serialize)
                 file.write(json_data)
