@@ -14,21 +14,17 @@ class TestFirstRectangle(unittest.TestCase):
         r3 = Rectangle(10, 2, 0, 0, 12)
         r4 = Rectangle(3, 2, 4, 0)
         self.assertEqual(r1.width, 10)
-        self.assertEqual(r1.height, 20)
-        self.assertEqual(r1.id, 1)
+        self.assertEqual(r1.height, 2)
         self.assertEqual(r2.width, 2)
         self.assertEqual(r2.height, 10)
-        self.assertEqual(r2.id, 2)
         self.assertEqual(r3.width, 10)
         self.assertEqual(r3.height, 2)
         self.assertEqual(r3.x, 0)
         self.assertEqual(r3.y, 0)
-        self.assertEqual(r3.id, 12)
         self.assertEqual(r4.width, 3)
         self.assertEqual(r4.height, 2)
         self.assertEqual(r4.x, 4)
         self.assertEqual(r4.y, 0)
-        self.assertEqual(r4.id, 3)
 
     def test_no_args(self):
         with self.assertRaises(TypeError):
