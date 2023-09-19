@@ -73,3 +73,36 @@ class Base:
                 return [cls.create(**d) for d in json_serialize]
         except IOError:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """save to csv"""
+        filename = cls.__name__ + ".csv"
+        with open(filename, "w", newline="") as file:
+            if list_objs is None or list_objs == []:
+                file.write("[]")
+            else:
+                if cls.__name__ == "Rectangle":
+                    attributes = ["id", "width", "height", "x", "y"]
+                else:
+                    attributes = ["id", "size", "x", "y"]
+                csv_write = csv.DictWriter(file, attributes=attributes)
+                for obj in list_objs:
+                    csv_write.writerow(obj.to_dictionary())
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """load from csv"""
+        filename = cls.__name__ + ".csv"
+        try:
+            with open(filename, "r", newline="") as file:
+                if cls.__name__ == "Rectangle":
+                    attributes = ["id", "width", "height", "x", "y"]
+                else:
+                    attributes = ["id", "size", "x", "y"]
+                json_serialize = csv.DictReader(file, attributes=attributes)
+                json_serialize = [dict([i, int(j)] for i, j in k.items())
+                                  for k in json_serialize]
+                return [cls.create(**k) for k in json_serialize]
+        except IOError:
+            return []
