@@ -13,8 +13,8 @@ if __name__ == "__main__":
     url = 'http://0.0.0.0:5000/search_user'
     r = requests.post(url, data={'q': q})
     if r.status_code == 200:
-        reponse = r.json()
-        if reponse:
+        response = r.json()
+        if response:
             print("[{}] {}".format(response.get("id"), response.get("name")))
         else:
             print("No result")
