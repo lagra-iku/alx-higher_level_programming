@@ -1,5 +1,5 @@
 #!/usr/bin/node
-/*a script that reads and prints the content of a file*/
+/* a script that reads and prints the content of a file */
 
 const fs = require('fs');
 
@@ -12,4 +12,3 @@ fs.readFile(filePath, 'utf-8', (err, data) => {
     console.log(data);
   }
 });
-
