@@ -3,7 +3,7 @@
 const request = require('request');
 
 const movieID = process.argv[2];
-const starwar = "https://swapi-api.alx-tools.com/api/films/" + movieID;
+const starwar = 'https://swapi-api.alx-tools.com/api/films/' + movieID;
 
 request(starwar, function (error, status, body) {
   if (error) {
